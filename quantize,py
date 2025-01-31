@@ -1,0 +1,9 @@
+import torch
+
+# 32-bit floating point tensor (High Precision)
+tensor_fp32 = torch.tensor([1.23456789, 2.34567891], dtype=torch.float32)
+print(tensor_fp32)  # Output: [1.23456789, 2.34567891]
+
+# Convert to 8-bit integer (Lower Precision)
+tensor_int8 = torch.quantize_per_tensor(tensor_fp32, scale=0.1, zero_point=0, dtype=torch.qint8)
+print(tensor_int8) # Output: tensor([1.2000, 2.3000], size=(2,), dtype=torch.qint8, quantization_scheme=torch.per_tensor_affine, scale=0.1, zero_point=0)

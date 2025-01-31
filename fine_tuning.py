@@ -18,6 +18,14 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Dummy example: Fine-tune on custom dataset (Cats & Dogs)
 # train_loader = ... (Your custom dataset here)
+train_data = torchvision.datasets.ImageFolder(
+	root="data",
+	transform=transforms.Compose([
+		transforms.Resize((224, 224)),
+		transforms.ToTensor()
+	])
+)
+train_loader = torch.utils.data.DataLoader(train_data, batch_size=4, shuffle=True)
 
 # Training Loop (Fine-Tuning)
 for epoch in range(5):  # Fine-tune for 5 epochs
