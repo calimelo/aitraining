@@ -25,7 +25,7 @@ print(f"Predicted ice cream sales at 82°F: ${predicted_sales[0]:.2f}")
 # Plot the results
 plt.scatter(X, y, color='blue', label="Actual Data")
 plt.plot(X, model.predict(X_poly), color='red', label="Polynomial Regression Curve")
-plt.scatter(85, predicted_sales, color='green', label="Prediction (85°F)")
+plt.scatter(85, predicted_sales, color='green', label="Prediction (82°F)")
 plt.xlabel("Temperature (°F)")
 plt.ylabel("Ice Cream Sales ($)")
 plt.legend()
